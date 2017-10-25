@@ -12,9 +12,9 @@ User.create([
   ])
 
 Post.create([
-  {body: "hello, first post", title: "First Post", image_url:"http://www.mulierchile.com/random-image/random-image-005.jpg"}
+  {body: "hello, first post", title: "First Post", image_url:"http://www.mulierchile.com/random-image/random-image-005.jpg", user_id: 1 }
   ])
 
 Comment.create([
-  {body: "this post sucks"}
+  {body: "this post sucks", post_id: 1 , user_id:1}
   ])

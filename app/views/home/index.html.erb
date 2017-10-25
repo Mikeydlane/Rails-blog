@@ -1,4 +1,13 @@
+<div class="feed">
+ 
+<% @posts.each do |post| %>
+<p><a href="/users/<%= post.user.id %>">
+	<h3><%= post.user.first_name + " " + post.user.last_name%></a></p></h3>
+		<strong><%= post.title %></strong>
+		<br>
+		<%= post.body %>
+		<br>
+		<%=post.created_at.strftime("%B %d, %Y") %></p>
+<% end %>
 
-
-
- <h1>hello</h1>
+</div>
