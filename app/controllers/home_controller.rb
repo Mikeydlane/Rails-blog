@@ -21,7 +21,8 @@ class HomeController < ApplicationController
     user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], password: params[:password])
     redirect_to :root
   end
-  def index 
+
+  def index
     @posts = Post.all
   end
 end
