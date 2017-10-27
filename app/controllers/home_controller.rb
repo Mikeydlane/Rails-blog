@@ -25,4 +25,10 @@ class HomeController < ApplicationController
   def index
     @posts = Post.all
   end
+  def logout
+
+  	session[:user_id] = nil
+  	flash[:message] = "Logged out"
+  	redirect_to :root
+end
 end
