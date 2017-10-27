@@ -8,6 +8,10 @@
   <p>By: <%= post.user.first_name %></p>
   <%= image_tag post.image_url %>
   <p><%= post.body %></p>
+
+<% post.comments.each do |comment| %>
+	<p><%= comment.body %></p>
+ <% end %>
   <%= link_to 'Show', post %>
   <%= link_to 'Edit', edit_post_path(post) %>
   <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -15,6 +19,7 @@
 </div>
 <br><br><br><hr><br><br><br>
 <% end %>
+
 
 <br>
 
