@@ -16,7 +16,9 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
+
 
   # GET /posts/1/edit
   def edit
@@ -27,7 +29,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = @current_user.id
-
+    @post.comments.new
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

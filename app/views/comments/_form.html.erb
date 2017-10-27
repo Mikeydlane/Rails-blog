@@ -16,17 +16,12 @@
     <%= form.text_area :body, id: :comment_body %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :comment_user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id, id: :comment_post_id %>
-  </div>
+  <%= form.hidden_field :user_id, value: @current_user.id %>
+  <%= form.hidden_field :post_id, value: params[:post_id] %>
 
   <div class="actions">
     <%= form.submit %>
+
+
   </div>
 <% end %>
