@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    post = Post.find(params[:post_id])
+    @comment = post.comments.new
   end
 
   # GET /comments/1/edit
@@ -26,7 +27,6 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
