@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     user = User.find_by(username: params[:user][:username])
     if user && user.password == params[:user][:password]
       session[:user_id]= user.id
-      redirect_to :root
+      redirect_to '/posts'
     else
       flash[:alert] = "You are no good!"
       redirect_to :root

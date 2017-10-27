@@ -7,14 +7,19 @@
       <li class="active">
 
         <% if @current_user %>
-       <a href="#"><%= @current_user.username %></a>
+       <a href="/posts"><%= @current_user.username %></a>
         <% end %>
-      <li><a href="/">Home</a></li>
+     
+        <% if !@current_user %>
       <li><a href="/sign_in" >Sign In</a></li>
+        <% end %>
+        <% if !@current_user %>
       <li><a href="/sign_up">Sign Up</a></li>
+      <% end %>
       <li><a href="/posts">Posts</a></li>
+      <% if @current_user %>
       <li><a href="/logout">Log Out</a></li>
-
+      <% end %>
     </ul>
   </div>
 </nav>
