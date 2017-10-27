@@ -18,8 +18,9 @@ class HomeController < ApplicationController
   end
 
   def handle_sign_up
-    user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], password: params[:password])
-    redirect_to :root
+    user = User.create(params.require(:user).permit(:first_name, :last_name, :username, :password))
+    session[:user_id]= user.id
+    redirect_to "/posts"
   end
 
   def index
