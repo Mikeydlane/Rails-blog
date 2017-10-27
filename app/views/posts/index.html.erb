@@ -10,6 +10,7 @@
   <p><%= post.body %></p>
 
 <% post.comments.each do |comment| %>
+  <p><%= comment.user.username %></p>
 	<p><%= comment.body %></p>
  <% end %>
   <%= link_to 'Show', post %>

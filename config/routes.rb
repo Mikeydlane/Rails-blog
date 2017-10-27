@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   post 'sign_in' => 'home#handle_sign_in'
   get 'sign_up' => 'home#sign_up', as: :sign_up
   post 'sign_up' => 'home#handle_sign_up'
-  
+  get 'logout' => 'home#logout'
+
 
   resources :comments
   resources :posts
