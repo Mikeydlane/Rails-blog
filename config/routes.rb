@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'home#sign_up'
   get 'sign_in' => 'home#sign_in', as: :sign_in
   post 'sign_in' => 'home#handle_sign_in'
   get 'sign_up' => 'home#sign_up', as: :sign_up
