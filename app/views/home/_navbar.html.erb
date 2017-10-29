@@ -26,6 +26,8 @@
         <% end %>
         <li><a href="/posts">Posts</a></li>
         <% if @current_user %>
+        <!-- <li><a href="/users/<%= @current_user.id %>/edit">Profile</a></li> -->
+        <li><%= link_to 'Profile', edit_user_path(@current_user) %></li>
         <li><a href="/logout">Log Out</a></li>
         <% end %>
       </ul>
