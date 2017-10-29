@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def handle_sign_in
     p "we're trying to handle it!", params
     user = User.find_by(username: params[:user][:username])
-    if user && user.password == params[:user][:password]
+    if user && user.authenticate(params[:user][:password])
       session[:user_id]= user.id
       redirect_to '/posts'
     else
